@@ -1,0 +1,53 @@
+React 18 Full Project - Point of Sale with Material UI & Laravel 10 API
+By: myiotlab
+
+16:30, 21:21, 32:00, 38:0, 52, 1:10, 1:23, 1:31, 1:41, 1:50, 2:04, 2:20, 2:31, 2:38, 2:51, 3:05, 3:19, 3:30, 3:35, 3:50, 3:57, 4:07
+
+Links Laravel:
+https://jwt-auth.readthedocs.io/en/develop/laravel-installation/
+https://jwt-auth.readthedocs.io/en/develop/quick-start/
+
+Links React:
+https://mui.com/material-ui/getting-started/
+https://mui.com/x/react-data-grid/getting-started/#installation
+
+https://react-hook-form.com/get-started
+https://mobx.js.org/installation.html
+
+ "@mui/x-data-grid": "^6.16.3",
+ "@mui/x-data-grid": "^7.3.1",
+
+
+composer create-project laravel/laravel:^10.0 point-of-sale-app
+cd point-of-sale-app
+composer require tymon/jwt-auth
+php artisan migrate 
+php artisan db:seed
+
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider”  # config/jwt.php
+php artisan jwt:secret
+
+php artisan make:controller AuthController
+php artisan make:mode Customer -m
+php artisan make:controller CustomerController -r  # resource controller
+ php artisan make:model Product -m
+php artisan make:model Category -m
+php artisan make:controller ProductController -r
+
+php artisan storage:link  #link  [public/storage] link has been connected to [storage/app/public].  
+Example:  http://localhost:8000/storage/product-category/1714373974-662f4556c9b29.jpeg
+
+php artisan make:model Order -m
+php artisan make:model ProductOrder -m
+php artisan make:controller OrderController -r
+
+
+REACT CLI
+npx create-react-app app-client-react --template typescript
+npm install react-router-dom
+npm install @mui/material @emotion/react @emotion/styled
+npm install react-hook-form @hookform/resolvers yup
+npm install mobx mobx-react-lite
+npm install --save-dev mobx-logger
+npm install @mui/icons-material
+
